@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tamagotchi</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Tamagotchi!</h1>
+<div class="gameContainer"></div>
+    <div id="chooseAnimal" class="container">
+        <h1>Choose your animal!</h1>
+        <div class="animals">
+            <div id="animal1idle" class="animalBorder"></div>
+            <div id="animal2idle" class="animalBorder"></div>
+        </div>
+        <div id="startGame">StartGame</div>
+    </div>
+    <div id="game" class="container">
+        <div id="gameOver">
+            <h1>GAME OVER</h1>
+            <h2 id="startAgain">TRY AGAIN</h2>
+        </div>
+        <div class="uiDisplay" id="uiDisplay">
+            <div class="bar">
+                <div id="hpBar"></div>
+                <div id="hpDisplay">100/100</div>
+            </div>
+            <div class="bar">
+                <div id="hungerBar"></div>
+                <div id="hungerDisplay">100/100</div>
+            </div>
+            <div class="bar">
+                <div id="funBar"></div>
+                <div id="funDisplay">100/100</div>
+            </div>
+            <div id="levelDisplay">Animal level: 1</div>
+            <div id="expDisplay">Experiance: 80/80</div>
+            <h1 id="play">Play</h1>
+            <h1 id="feed">feed</h1>
+        </div>
+        <div id="room">
+            <h1 id="levelUp">LEVEL UP!</h1>
+            <div id="animal"></div>
+        </div>
+    </div>
+</body>
+</html>
