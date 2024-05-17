@@ -15,6 +15,9 @@ const gameOverDisplay = document.getElementById('gameOver') as HTMLElement
 const startAgain = document.getElementById('startAgain') as HTMLElement
 const play = document.getElementById('play') as HTMLElement
 const feed = document.getElementById('feed') as HTMLElement
+const expDisplay = document.getElementById('expDisplay') as HTMLElement
+const levelDisplay = document.getElementById('levelDisplay') as HTMLElement
+const levelUpDisplay = document.getElementById('levelUp') as HTMLElement
 
 let health:number = 100
 let hunger:number = 100
@@ -24,6 +27,9 @@ let playing:boolean = false
 let animalPos:number = 50
 let rightPos:boolean = true
 let feeding:boolean = false
+let level: number = 1;
+let exp: number = 0;
+let expToNextLevel: number = 10
 
 let chosenAnimal:string = ''
 
@@ -93,6 +99,11 @@ setInterval(function () {
             setTimeout(function (){
                 gameOver()
             },1000)
+        }
+        exp++
+        expDisplay.innerHTML = `Experiance: ${exp}/${expToNextLevel}`
+        if (exp >= expToNextLevel) {
+            levelUp()
         }
     }
 },1000)
@@ -199,3 +210,14 @@ feed.onclick = function () {
         },1000)
     }
 }
+
+function levelUp () {
+    level ++
+    expToNextLevel = Math.floor(expToNextLevel * 1.5)
+    levelDisplay.innerHTML = `Animal level: ${level}`
+    levelUpDisplay.style.display = 'block'
+    setTimeout(function () {
+        levelUpDisplay.style.display = 'none'
+    },2000)
+}
+

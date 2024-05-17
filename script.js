@@ -16,6 +16,9 @@ const gameOverDisplay = document.getElementById('gameOver');
 const startAgain = document.getElementById('startAgain');
 const play = document.getElementById('play');
 const feed = document.getElementById('feed');
+const expDisplay = document.getElementById('expDisplay');
+const levelDisplay = document.getElementById('levelDisplay');
+const levelUpDisplay = document.getElementById('levelUp');
 let health = 100;
 let hunger = 100;
 let fun = 100;
@@ -24,6 +27,9 @@ let playing = false;
 let animalPos = 50;
 let rightPos = true;
 let feeding = false;
+let level = 1;
+let exp = 0;
+let expToNextLevel = 10;
 let chosenAnimal = '';
 animal1.onclick = function () {
     chosenAnimal = 'animal1';
@@ -90,6 +96,11 @@ setInterval(function () {
             setTimeout(function () {
                 gameOver();
             }, 1000);
+        }
+        exp++;
+        expDisplay.innerHTML = `Experiance: ${exp}/${expToNextLevel}`;
+        if (exp >= expToNextLevel) {
+            levelUp();
         }
     }
 }, 1000);
@@ -193,3 +204,12 @@ feed.onclick = function () {
         }, 1000);
     }
 };
+function levelUp() {
+    level++;
+    expToNextLevel = Math.floor(expToNextLevel * 1.5);
+    levelDisplay.innerHTML = `Animal level: ${level}`;
+    levelUpDisplay.style.display = 'block';
+    setTimeout(function () {
+        levelUpDisplay.style.display = 'none';
+    }, 2000);
+}

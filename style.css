@@ -178,7 +178,13 @@ body {
     top: 80px;
     left: 10px;
     font-size: 30px;
-}
+}#expDisplay {
+     position: absolute;
+     top: 120px;
+     left: 10px;
+     font-size: 30px;
+ }
+
 #play {
     text-align: center;
     background-color: #525252;
@@ -213,6 +219,23 @@ body {
     &:hover {
         scale: 1.1;
         cursor: pointer;
+    }
+}
+#levelUp {
+    display: none;
+    color: #6aef6a;
+    position: absolute;
+    width: 200px;
+    left: -80px;
+    transition: scale 0.3s ease;
+    animation: levelUp 0.9s infinite linear;
+}
+@keyframes levelUp {
+    0%, 100% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.1;
     }
 }
 /*animal1Animations*/
